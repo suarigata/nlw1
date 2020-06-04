@@ -1,0 +1,11 @@
+npm install express
+npm install @types/express -D
+npm install typescript -D
+npm install ts-node -D
+npx tsc --init
+# like nodemon
+npm install ts-node-dev -D
+npm install knex
+npm install sqlite3
+npm install cors
+npm install @types/cors -D
