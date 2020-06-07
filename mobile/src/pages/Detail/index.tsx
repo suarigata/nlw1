@@ -5,6 +5,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { RectButton } from "react-native-gesture-handler";
 import api from '../../services/api';
 import * as MailComposer from "expo-mail-composer";
+import Constants from "expo-constants";
 
 interface Params{
     point_id: number
@@ -13,6 +14,7 @@ interface Params{
 interface Data{
     point: {
         image: string,
+        image_url: string,
         name: string,
         email: string,
         whatsapp: string,
@@ -64,7 +66,7 @@ const Detail = () => {
                     <Icon name='arrow-left' size={20} color="#34cb79" />
                 </TouchableOpacity>
 
-                <Image style={styles.pointImage} source={{uri: data.point.image}} />
+                <Image style={styles.pointImage} source={{uri: data.point.image_url}} />
 
                 <Text style={styles.pointName}>{data.point.name}</Text>
                 <Text style={styles.pointItems}>
@@ -91,10 +93,15 @@ const Detail = () => {
 };
 
 const styles = StyleSheet.create({
+    // container: {
+    //   flex: 1,
+    //   padding: 32,
+    //   paddingTop: 20,
+    // },
     container: {
       flex: 1,
-      padding: 32,
-      paddingTop: 20,
+      paddingHorizontal: 32,
+      paddingTop: 20 + Constants.statusBarHeight,
     },
   
     pointImage: {
