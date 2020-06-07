@@ -9,3 +9,8 @@ npm install knex
 npm install sqlite3
 npm install cors
 npm install @types/cors -D
+
+npm install multer
+npm install @types/multer -D
+npm install celebrate
+npm install @types/hapi__joi -D
